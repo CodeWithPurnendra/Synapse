@@ -30,18 +30,12 @@ function ChatBar() {
         console.log("Message:", message);
         console.log("Model:", model);
 
-        // Later:
-        // Send message + model to your backend/API
-
         setMessage("");
     };
 
     const handleKeyDown = (e) => {
-        // Enter = Send
-        // Shift + Enter = New line
         if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault();
-
             handleSubmit(e);
         }
     };
@@ -54,19 +48,54 @@ function ChatBar() {
     return (
         <div className="chatbar-container">
 
-            {/* =========================
-                CHATBAR
-            ========================= */}
-
             <form
                 className="chatbar"
                 onSubmit={handleSubmit}
             >
 
-                {/* =========================
-                    MESSAGE INPUT
-                ========================= */}
+                {/* LEFT TOOLS */}
+                <div className="chatbar-left">
 
+                    <button
+                        type="button"
+                        className="chatbar-tool tooltip"
+                        aria-label="Add"
+                    >
+                        <FiPlus />
+
+                        <span className="tooltip-text">
+                            Add
+                        </span>
+                    </button>
+
+                    <button
+                        type="button"
+                        className="chatbar-tool tooltip"
+                        aria-label="Attach file"
+                    >
+                        <FiPaperclip />
+
+                        <span className="tooltip-text">
+                            Attach file
+                        </span>
+                    </button>
+
+                    <button
+                        type="button"
+                        className="chatbar-tool tooltip"
+                        aria-label="Tools"
+                    >
+                        <FiSliders />
+
+                        <span className="tooltip-text">
+                            Tools
+                        </span>
+                    </button>
+
+                </div>
+
+
+                {/* MESSAGE INPUT */}
                 <textarea
                     className="chatbar-input"
                     value={message}
@@ -78,165 +107,100 @@ function ChatBar() {
                 />
 
 
-                {/* =========================
-                    TOOLBAR
-                ========================= */}
+                {/* RIGHT SIDE */}
+                <div className="chatbar-right">
 
-                <div className="chatbar-toolbar">
-
-                    {/* LEFT TOOLS */}
-
-                    <div className="chatbar-tools">
+                    {/* MODEL */}
+                    <div className="model-dropdown">
 
                         <button
                             type="button"
-                            className="chatbar-tool"
-                            aria-label="Add"
-                            title="Add"
+                            className="model-selector"
+                            onClick={() =>
+                                setIsModelOpen(!isModelOpen)
+                            }
+                            aria-haspopup="listbox"
+                            aria-expanded={isModelOpen}
+                            aria-label="Select AI model"
                         >
-                            <FiPlus />
+
+                            <span className="model-dot"></span>
+
+                            <span className="selected-model">
+                                {model}
+                            </span>
+
+                            <FiChevronDown
+                                className={`model-chevron ${
+                                    isModelOpen ? "rotate" : ""
+                                }`}
+                            />
+
                         </button>
 
 
-                        <button
-                            type="button"
-                            className="chatbar-tool"
-                            aria-label="Attach file"
-                            title="Attach file"
-                        >
-                            <FiPaperclip />
-                        </button>
-
-
-                        <button
-                            type="button"
-                            className="chatbar-tool"
-                            aria-label="Tools"
-                            title="Tools"
-                        >
-                            <FiSliders />
-                        </button>
-
-                    </div>
-
-
-                    {/* RIGHT ACTIONS */}
-
-                    <div className="chatbar-actions">
-
-                        {/* =========================
-                            CUSTOM MODEL DROPDOWN
-                        ========================= */}
-
-                        <div className="model-dropdown">
-
-                            <button
-                                type="button"
-                                className="model-selector"
-                                onClick={() =>
-                                    setIsModelOpen(!isModelOpen)
-                                }
-                                aria-haspopup="listbox"
-                                aria-expanded={isModelOpen}
-                                aria-label="Select AI model"
+                        {isModelOpen && (
+                            <div
+                                className="model-menu"
+                                role="listbox"
                             >
 
-                                <span
-                                    className="model-dot"
-                                    aria-hidden="true"
-                                ></span>
+                                {models.map((item) => (
+                                    <button
+                                        key={item}
+                                        type="button"
+                                        className={`model-option ${
+                                            model === item
+                                                ? "selected"
+                                                : ""
+                                        }`}
+                                        onClick={() =>
+                                            handleModelSelect(item)
+                                        }
+                                        role="option"
+                                        aria-selected={
+                                            model === item
+                                        }
+                                    >
 
-                                <span className="selected-model">
-                                    {model}
-                                </span>
+                                        <span className="option-dot"></span>
 
-                                <FiChevronDown
-                                    className={`model-chevron ${
-                                        isModelOpen
-                                            ? "rotate"
-                                            : ""
-                                    }`}
-                                />
+                                        <span>
+                                            {item}
+                                        </span>
 
-                            </button>
+                                        {model === item && (
+                                            <FiCheck className="check-icon" />
+                                        )}
 
+                                    </button>
+                                ))}
 
-                            {/* =========================
-                                DROPDOWN MENU
-                            ========================= */}
-
-                            {isModelOpen && (
-                                <div
-                                    className="model-menu"
-                                    role="listbox"
-                                >
-
-                                    {models.map((item) => (
-                                        <button
-                                            key={item}
-                                            type="button"
-                                            className={`model-option ${
-                                                model === item
-                                                    ? "selected"
-                                                    : ""
-                                            }`}
-                                            onClick={() =>
-                                                handleModelSelect(item)
-                                            }
-                                            role="option"
-                                            aria-selected={
-                                                model === item
-                                            }
-                                        >
-
-                                            <span className="option-dot"></span>
-
-                                            <span>
-                                                {item}
-                                            </span>
-
-                                            {model === item && (
-                                                <FiCheck className="check-icon" />
-                                            )}
-
-                                        </button>
-                                    ))}
-
-                                </div>
-                            )}
-
-                        </div>
-
-
-                        {/* =========================
-                            SEND BUTTON
-                        ========================= */}
-
-                        <button
-                            type="submit"
-                            className={`chatbar-send ${
-                                message.trim()
-                                    ? "active"
-                                    : ""
-                            }`}
-                            disabled={!message.trim()}
-                            aria-label="Send message"
-                            title="Send message"
-                        >
-                            <FiArrowUp />
-                        </button>
+                            </div>
+                        )}
 
                     </div>
+
+
+                    {/* SEND */}
+                    <button
+                        type="submit"
+                        className={`chatbar-send ${
+                            message.trim() ? "active" : ""
+                        }`}
+                        disabled={!message.trim()}
+                        aria-label="Send message"
+                        title="Send message"
+                    >
+                        <FiArrowUp />
+                    </button>
 
                 </div>
 
             </form>
 
 
-            {/* =========================
-                DISCLAIMER
-            ========================= */}
-
+            {/* DISCLAIMER */}
             <p className="chatbar-disclaimer">
                 Synapse AI can make mistakes. Check important information.
             </p>

@@ -2,43 +2,46 @@ import {
     FiSearch,
     FiBell,
     FiMoon,
-    FiChevronDown
 } from "react-icons/fi";
+
+import { useLocation } from "react-router-dom";
 
 import "./TopNavBar.css";
 
 function TopNavBar() {
+    const location = useLocation();
+
+    const pageTitles = {
+        "/home": "Home Dashboard",
+        "/chat": "AI Chat",
+        "/history": "Chat History",
+        "/favorites": "Favorites",
+        "/documents": "Documents",
+        "/notes": "Notes",
+        "/settings": "Settings",
+    };
+
+    const pageTitle =
+        pageTitles[location.pathname] || "Synapse AI";
+
     return (
         <header className="top-navbar">
 
             {/* Left Side */}
+
             <div className="top-navbar-left">
                 <h1 className="page-title">
-                    Home Dashboard
+                    {pageTitle}
                 </h1>
             </div>
 
 
             {/* Right Side */}
+
             <div className="top-navbar-right">
 
-                {/* AI Model */}
-                <button
-                    type="button"
-                    className="model-selector"
-                    aria-label="Select AI model"
-                >
-                    <span className="model-status"></span>
-
-                    <span className="model-name">
-                        GPT-4o
-                    </span>
-
-                    <FiChevronDown className="model-arrow" />
-                </button>
-
-
                 {/* Search */}
+
                 <button
                     type="button"
                     className="top-nav-icon-btn"
@@ -50,6 +53,7 @@ function TopNavBar() {
 
 
                 {/* Notifications */}
+
                 <button
                     type="button"
                     className="top-nav-icon-btn"
@@ -61,6 +65,7 @@ function TopNavBar() {
 
 
                 {/* Theme */}
+
                 <button
                     type="button"
                     className="top-nav-icon-btn"
@@ -72,6 +77,7 @@ function TopNavBar() {
 
 
                 {/* Profile */}
+
                 <button
                     type="button"
                     className="profile-button"

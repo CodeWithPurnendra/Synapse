@@ -1,4 +1,3 @@
-
 import {
     FiMessageSquare,
     FiFileText,
@@ -10,9 +9,14 @@ import {
 
 import "./Home.css";
 import ChatBar from "../../ChatBar/ChatBar";
+
 function Home() {
     return (
         <main className="home-page">
+
+            {/* =========================
+                Welcome
+            ========================= */}
 
             <section className="welcome-card">
                 <h1>Welcome back, Alex</h1>
@@ -22,6 +26,12 @@ function Home() {
                     3 documents analyzed.
                 </p>
             </section>
+
+
+            {/* =========================
+                Quick Start
+            ========================= */}
+
             <section className="dashboard-section">
 
                 <div className="section-title">
@@ -30,7 +40,10 @@ function Home() {
 
                 <div className="quick-start-grid">
 
-                    <button className="quick-card">
+                    <button
+                        type="button"
+                        className="quick-card"
+                    >
                         <div className="quick-icon">
                             <FiMessageSquare />
                         </div>
@@ -43,7 +56,10 @@ function Home() {
                     </button>
 
 
-                    <button className="quick-card">
+                    <button
+                        type="button"
+                        className="quick-card"
+                    >
                         <div className="quick-icon">
                             <FiFileText />
                         </div>
@@ -56,7 +72,10 @@ function Home() {
                     </button>
 
 
-                    <button className="quick-card">
+                    <button
+                        type="button"
+                        className="quick-card"
+                    >
                         <div className="quick-icon">
                             <FiEdit3 />
                         </div>
@@ -69,7 +88,10 @@ function Home() {
                     </button>
 
 
-                    <button className="quick-card">
+                    <button
+                        type="button"
+                        className="quick-card"
+                    >
                         <div className="quick-icon">
                             <FiStar />
                         </div>
@@ -85,14 +107,25 @@ function Home() {
 
             </section>
 
+
+            {/* =========================
+                Dashboard
+            ========================= */}
+
             <div className="dashboard-grid">
+
+                {/* Recent Conversations */}
 
                 <section className="dashboard-panel">
 
                     <div className="panel-header">
                         <span>RECENT CONVERSATIONS</span>
 
-                        <button className="panel-more">
+                        <button
+                            type="button"
+                            className="panel-more"
+                            aria-label="More conversations"
+                        >
                             <FiMoreHorizontal />
                         </button>
                     </div>
@@ -107,6 +140,7 @@ function Home() {
                             </div>
 
                             <div className="conversation-info">
+
                                 <h4>
                                     React useEffect Deep Dive
                                 </h4>
@@ -114,13 +148,17 @@ function Home() {
                                 <span>
                                     2 hours ago
                                 </span>
+
                             </div>
 
                             <span className="model-badge green">
                                 ● GPT-4o
                             </span>
 
-                            <button className="resume-btn">
+                            <button
+                                type="button"
+                                className="resume-btn"
+                            >
                                 Resume →
                             </button>
 
@@ -134,6 +172,7 @@ function Home() {
                             </div>
 
                             <div className="conversation-info">
+
                                 <h4>
                                     Marketing Strategy Q4
                                 </h4>
@@ -141,13 +180,17 @@ function Home() {
                                 <span>
                                     Yesterday
                                 </span>
+
                             </div>
 
                             <span className="model-badge orange">
                                 ● CLAUDE 3.5
                             </span>
 
-                            <button className="resume-btn">
+                            <button
+                                type="button"
+                                className="resume-btn"
+                            >
                                 Resume →
                             </button>
 
@@ -161,6 +204,7 @@ function Home() {
                             </div>
 
                             <div className="conversation-info">
+
                                 <h4>
                                     Python Data Pipeline
                                 </h4>
@@ -168,13 +212,17 @@ function Home() {
                                 <span>
                                     3 days ago
                                 </span>
+
                             </div>
 
                             <span className="model-badge green">
                                 ● GPT-4o
                             </span>
 
-                            <button className="resume-btn">
+                            <button
+                                type="button"
+                                className="resume-btn"
+                            >
                                 Resume →
                             </button>
 
@@ -183,6 +231,9 @@ function Home() {
                     </div>
 
                 </section>
+
+
+                {/* AI Library */}
 
                 <section className="library-panel">
 
@@ -193,7 +244,10 @@ function Home() {
 
                     <div className="library-list">
 
-                        <button className="library-card">
+                        <button
+                            type="button"
+                            className="library-card"
+                        >
 
                             <div className="library-icon">
                                 <FiFolder />
@@ -210,7 +264,10 @@ function Home() {
                         </button>
 
 
-                        <button className="library-card">
+                        <button
+                            type="button"
+                            className="library-card"
+                        >
 
                             <div className="library-icon">
                                 <FiStar />
@@ -227,7 +284,10 @@ function Home() {
                         </button>
 
 
-                        <button className="library-card">
+                        <button
+                            type="button"
+                            className="library-card"
+                        >
 
                             <div className="library-icon">
                                 <FiEdit3 />
@@ -248,11 +308,11 @@ function Home() {
                 </section>
 
             </div>
+
             <div className="chat-bar">
-                <section>
-                    <ChatBar />
-                </section>
+                <ChatBar />
             </div>
+
         </main>
     );
 }

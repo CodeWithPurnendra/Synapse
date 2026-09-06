@@ -38,7 +38,7 @@
 
     color: #f5f5f7;
 
-    font-size: 10px;
+    font-size: 15px;
     font-weight: 600;
 
     line-height: 1;
@@ -58,86 +58,6 @@
     gap: 2px;
 
     flex-shrink: 0;
-}
-
-
-/* ========================================
-   AI Model Selector
-======================================== */
-
-.model-selector {
-    height: 22px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 4px;
-
-    padding: 0 7px;
-
-    margin-right: 8px;
-
-    border: 1px solid #272936;
-
-    border-radius: 20px;
-
-    background: #11121a;
-
-    color: #cfd2dc;
-
-    font-family: inherit;
-
-    font-size: 7px;
-    font-weight: 500;
-
-    cursor: pointer;
-
-    white-space: nowrap;
-
-    transition:
-        background 0.2s ease,
-        border-color 0.2s ease;
-}
-
-.model-selector:hover {
-    background: #181923;
-
-    border-color: #3b2d54;
-}
-
-
-/* Green Status */
-
-.model-status {
-    width: 4px;
-    height: 4px;
-
-    flex-shrink: 0;
-
-    border-radius: 50%;
-
-    background: #10b981;
-
-    box-shadow:
-        0 0 5px rgba(16, 185, 129, 0.5);
-}
-
-
-/* Model Name */
-
-.model-name {
-    line-height: 1;
-}
-
-
-/* Arrow */
-
-.model-arrow {
-    width: 8px;
-    height: 8px;
-
-    color: #858998;
 }
 
 
@@ -163,7 +83,7 @@
 
     color: #8e93a2;
 
-    font-size: 11px;
+    font-size: 13px;
 
     cursor: pointer;
 

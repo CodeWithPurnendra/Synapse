@@ -1,0 +1,1027 @@
+
+.documents-page {
+    width: 100%;
+    min-height: 100%;
+
+    padding: 24px;
+
+    box-sizing: border-box;
+
+    background: #090a0f;
+
+    color: #ffffff;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.documents-header {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+}
+
+
+.documents-title-wrapper {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.documents-title-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(167, 139, 250, 0.15);
+
+    border-radius: 12px;
+
+    background: rgba(124, 58, 237, 0.12);
+
+    color: #a78bfa;
+
+    font-size: 19px;
+}
+
+
+.documents-title-wrapper h1 {
+    margin: 0 0 5px;
+
+    color: #f5f5f7;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.4px;
+}
+
+
+.documents-title-wrapper p {
+    margin: 0;
+
+    color: #777c8c;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   UPLOAD BUTTON
+========================================================= */
+
+.upload-button {
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: linear-gradient(
+        135deg,
+        #9061f9,
+        #7c3aed
+    );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(124, 58, 237, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.upload-button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(124, 58, 237, 0.25);
+}
+
+
+.upload-button svg {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   UPLOAD AREA
+========================================================= */
+
+.upload-area {
+    width: 100%;
+
+    min-height: 155px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    margin-bottom: 22px;
+
+    padding: 20px;
+
+    border: 1px dashed #353044;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 58, 237, 0.035),
+            rgba(255, 255, 255, 0.01)
+        );
+
+    text-align: center;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+.upload-area:hover {
+    border-color: #59447d;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 58, 237, 0.06),
+            rgba(255, 255, 255, 0.015)
+        );
+}
+
+
+.upload-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 9px;
+
+    border: 1px solid rgba(167, 139, 250, 0.12);
+
+    border-radius: 9px;
+
+    background: rgba(124, 58, 237, 0.10);
+
+    color: #a78bfa;
+
+    font-size: 16px;
+}
+
+
+.upload-area h2 {
+    margin: 0 0 4px;
+
+    color: #e5e7eb;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.upload-area p {
+    margin: 0 0 3px;
+
+    color: #777c8c;
+
+    font-size: 8px;
+}
+
+
+.upload-area > span {
+    color: #555a69;
+
+    font-size: 7px;
+}
+
+
+.browse-button {
+    margin-top: 11px;
+
+    height: 28px;
+
+    padding: 0 12px;
+
+    border: 1px solid #363143;
+
+    border-radius: 7px;
+
+    background: #171821;
+
+    color: #bfc2cc;
+
+    font-family: inherit;
+
+    font-size: 7px;
+
+    cursor: pointer;
+}
+
+
+.browse-button:hover {
+    border-color: #51406f;
+
+    background: #1d1d29;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.documents-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 18px;
+}
+
+
+.documents-search {
+    flex: 1;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 0 12px;
+
+    border: 1px solid #242532;
+
+    border-radius: 9px;
+
+    background: #151620;
+}
+
+
+.documents-search:focus-within {
+    border-color: #4a376b;
+
+    box-shadow:
+        0 0 0 3px rgba(124, 58, 237, 0.05);
+}
+
+
+.documents-search > svg {
+    color: #777c8c;
+
+    font-size: 14px;
+}
+
+
+.documents-search input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 10px;
+}
+
+
+.documents-search input::placeholder {
+    color: #626777;
+}
+
+
+.documents-clear {
+    width: 23px;
+    height: 23px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #777c8c;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+.document-filter {
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0 10px;
+
+    border: 1px solid #242532;
+
+    border-radius: 9px;
+
+    background: #151620;
+
+    color: #777c8c;
+}
+
+
+.document-filter svg {
+    font-size: 12px;
+}
+
+
+.document-filter select {
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #bfc2cc;
+
+    font-family: inherit;
+
+    font-size: 9px;
+
+    cursor: pointer;
+}
+
+
+.document-filter select option {
+    background: #171821;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   LIST HEADER
+========================================================= */
+
+.documents-list-header {
+    margin-bottom: 9px;
+
+    padding: 0 2px;
+}
+
+
+.documents-list-header div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.documents-list-header span {
+    color: #9ca3af;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.6px;
+}
+
+
+.documents-list-header small {
+    color: #555a69;
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   DOCUMENT LIST
+========================================================= */
+
+.documents-list {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   DOCUMENT CARD
+========================================================= */
+
+.document-card {
+    position: relative;
+
+    width: 100%;
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 11px 13px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #242532;
+
+    border-radius: 10px;
+
+    background: #151620;
+
+    overflow: visible;
+
+    z-index: 1;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.document-card:hover {
+    background: #191a25;
+
+    border-color: #3b2d54;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.15);
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   FILE ICON
+========================================================= */
+
+.document-file-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+}
+
+
+.document-file-icon.pdf {
+    border: 1px solid rgba(239, 68, 68, 0.12);
+
+    background: rgba(239, 68, 68, 0.08);
+
+    color: #f87171;
+}
+
+
+.document-file-icon.csv {
+    border: 1px solid rgba(16, 185, 129, 0.12);
+
+    background: rgba(16, 185, 129, 0.08);
+
+    color: #34d399;
+}
+
+
+.document-file-icon.txt {
+    border: 1px solid rgba(96, 165, 250, 0.12);
+
+    background: rgba(96, 165, 250, 0.08);
+
+    color: #60a5fa;
+}
+
+
+/* =========================================================
+   INFO
+========================================================= */
+
+.document-info {
+    min-width: 0;
+
+    flex: 1;
+}
+
+
+.document-name-row {
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 5px;
+}
+
+
+.document-name-row h2 {
+    min-width: 0;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    color: #e5e7eb;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.document-type {
+    padding: 2px 5px;
+
+    border-radius: 4px;
+
+    background: #20212c;
+
+    color: #777c8c;
+
+    font-size: 5px;
+
+    font-weight: 600;
+}
+
+
+.document-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #5e6371;
+
+    font-size: 6px;
+
+    white-space: nowrap;
+}
+
+
+.document-model {
+    color: #8170a5;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.document-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    flex-shrink: 0;
+
+    padding: 4px 7px;
+
+    border-radius: 5px;
+
+    font-size: 6px;
+
+    white-space: nowrap;
+}
+
+
+.document-status svg {
+    font-size: 9px;
+}
+
+
+.document-status.success {
+    background: rgba(16, 185, 129, 0.08);
+
+    color: #10b981;
+}
+
+
+.document-status.processing {
+    background: rgba(167, 139, 250, 0.08);
+
+    color: #a78bfa;
+}
+
+
+.document-status.warning {
+    background: rgba(245, 158, 11, 0.08);
+
+    color: #f59e0b;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.document-actions {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    flex-shrink: 0;
+}
+
+
+.document-open {
+    height: 27px;
+
+    padding: 0 10px;
+
+    border: 1px solid #2d2f3b;
+
+    border-radius: 7px;
+
+    background: #191a25;
+
+    color: #bfc2cc;
+
+    font-family: inherit;
+
+    font-size: 7px;
+
+    cursor: pointer;
+}
+
+
+.document-open:hover {
+    background: #222330;
+
+    border-color: #45345f;
+
+    color: #ffffff;
+}
+
+
+.document-more {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid transparent;
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #777c8c;
+
+    cursor: pointer;
+}
+
+
+.document-more:hover,
+.document-more.active {
+    background: rgba(255, 255, 255, 0.06);
+
+    border-color: #2c2d39;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DOCUMENT MENU
+========================================================= */
+
+.document-menu {
+    position: absolute;
+
+    top: calc(100% + 7px);
+
+    right: 0;
+
+    width: 135px;
+
+    padding: 5px;
+
+    border: 1px solid #2b2c38;
+
+    border-radius: 10px;
+
+    background: #181923;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.5);
+
+    z-index: 9999;
+}
+
+
+.document-menu-up .document-menu {
+    top: auto;
+
+    bottom: calc(100% + 7px);
+}
+
+
+.document-menu button {
+    width: 100%;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 9px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #bfc2cc;
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+
+.document-menu button:hover {
+    background: rgba(255, 255, 255, 0.06);
+
+    color: #ffffff;
+}
+
+
+.document-menu button svg {
+    color: #858a9a;
+
+    font-size: 12px;
+}
+
+
+.document-menu button.danger {
+    color: #ef8888;
+}
+
+
+.document-menu button.danger:hover {
+    background: rgba(239, 68, 68, 0.08);
+
+    color: #fca5a5;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.documents-empty {
+    min-height: 250px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #242532;
+
+    border-radius: 11px;
+
+    background: #151620;
+
+    text-align: center;
+}
+
+
+.documents-empty-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 12px;
+
+    border: 1px solid #292b38;
+
+    border-radius: 11px;
+
+    background: #11121a;
+
+    color: #666b7a;
+
+    font-size: 18px;
+}
+
+
+.documents-empty h3 {
+    margin: 0 0 5px;
+
+    color: #d1d5db;
+
+    font-size: 12px;
+}
+
+
+.documents-empty p {
+    margin: 0;
+
+    color: #626777;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .documents-page {
+        padding: 20px;
+    }
+
+    .documents-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .upload-button {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .documents-page {
+        padding: 15px;
+    }
+
+    .documents-controls {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .document-filter {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+    .document-filter select {
+        width: 100%;
+    }
+
+    .document-card {
+        align-items: flex-start;
+    }
+
+    .document-status {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .documents-page {
+        padding: 12px;
+    }
+
+    .upload-area {
+        min-height: 145px;
+    }
+
+    .document-card {
+        gap: 9px;
+
+        padding: 10px;
+    }
+
+    .document-file-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .document-open {
+        display: none;
+    }
+
+}

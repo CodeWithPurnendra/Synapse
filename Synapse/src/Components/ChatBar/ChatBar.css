@@ -1,77 +1,147 @@
-/* ========================================
+/* =========================================================
    CHATBAR CONTAINER
-======================================== */
+========================================================= */
 
 .chatbar-container {
     width: 100%;
-    max-width: 790px;
+    max-width: 850px;
 
-    margin: 14px auto 0;
-    padding: 0 12px 10px;
+    margin: 0 auto;
 
     box-sizing: border-box;
 }
 
 
-/* ========================================
-   CHATBAR
-======================================== */
+/* =========================================================
+   MAIN CHATBAR
+========================================================= */
 
 .chatbar {
+    position: relative;
+
     width: 100%;
-    min-height: 72px;
+    min-height: 58px;
 
     display: flex;
-    flex-direction: column;
+    align-items: center;
 
-    padding: 10px 11px 8px;
+    padding: 7px 9px;
 
     box-sizing: border-box;
 
     background: #151620;
 
-    border: 1px solid #292b38;
-    border-radius: 15px;
+    border: 1px solid #292a36;
+
+    border-radius: 17px;
 
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.18);
+        0 4px 14px rgba(0, 0, 0, 0.18);
 
     transition:
         border-color 0.2s ease,
+        background-color 0.2s ease,
         box-shadow 0.2s ease;
 }
 
 
-/* ========================================
+/* =========================================================
    FOCUS
-======================================== */
+========================================================= */
 
 .chatbar:focus-within {
-    border-color: #3b2d54;
+    background: #171821;
+
+    border-color: #49366d;
 
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.22),
-        0 0 0 2px rgba(139, 92, 246, 0.06);
+        0 0 0 1px rgba(139, 92, 246, 0.08),
+        0 5px 18px rgba(0, 0, 0, 0.2);
 }
 
 
-/* ========================================
-   TEXTAREA
-======================================== */
+/* =========================================================
+   LEFT TOOLS
+========================================================= */
+
+.chatbar-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 2px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   TOOL BUTTON
+========================================================= */
+
+.chatbar-tool {
+    position: relative;
+
+    width: 31px;
+    height: 31px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #9296a5;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.18s ease,
+        background-color 0.18s ease,
+        transform 0.18s ease;
+}
+
+
+.chatbar-tool:hover {
+    color: #e5e7eb;
+
+    background: rgba(255, 255, 255, 0.055);
+}
+
+
+.chatbar-tool:active {
+    transform: scale(0.93);
+}
+
+
+/* =========================================================
+   MESSAGE INPUT
+========================================================= */
 
 .chatbar-input {
-    width: 100%;
+    flex: 1;
 
-    min-height: 30px;
+    min-width: 0;
+
+    height: 40px;
+    min-height: 40px;
     max-height: 150px;
 
-    resize: none;
+    margin-left: 4px;
 
-    margin: 0;
-
-    padding: 3px 5px 8px;
+    padding: 10px 8px;
 
     box-sizing: border-box;
+
+    resize: none;
 
     border: none;
     outline: none;
@@ -84,119 +154,70 @@
 
     font-size: 13px;
 
-    line-height: 1.5;
+    font-weight: 400;
+
+    line-height: 20px;
+
+    overflow-y: auto;
 }
+
 
 .chatbar-input::placeholder {
     color: #737887;
-}
 
-.chatbar-input:focus {
-    outline: none;
-}
-
-
-/* ========================================
-   TOOLBAR
-======================================== */
-
-.chatbar-toolbar {
-    width: 100%;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    margin-top: 2px;
+    opacity: 1;
 }
 
 
-/* ========================================
-   LEFT TOOLS
-======================================== */
+/* =========================================================
+   INPUT SCROLLBAR
+========================================================= */
 
-.chatbar-tools {
-    display: flex;
-
-    align-items: center;
-
-    gap: 2px;
+.chatbar-input::-webkit-scrollbar {
+    width: 4px;
 }
 
-
-/* ========================================
-   TOOL BUTTON
-======================================== */
-
-.chatbar-tool {
-    width: 30px;
-    height: 30px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 0;
-
-    border: none;
-
-    border-radius: 8px;
-
+.chatbar-input::-webkit-scrollbar-track {
     background: transparent;
-
-    color: #8f94a3;
-
-    font-size: 15px;
-
-    cursor: pointer;
-
-    transition:
-        color 0.2s ease,
-        background-color 0.2s ease,
-        transform 0.15s ease;
 }
 
-.chatbar-tool:hover {
-    color: #d1d5db;
+.chatbar-input::-webkit-scrollbar-thumb {
+    background: #30313d;
 
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.chatbar-tool:active {
-    transform: scale(0.94);
+    border-radius: 15px;
 }
 
 
-/* ========================================
-   RIGHT ACTIONS
-======================================== */
+/* =========================================================
+   RIGHT SIDE
+========================================================= */
 
-.chatbar-actions {
+.chatbar-right {
     display: flex;
 
     align-items: center;
 
-    gap: 6px;
+    gap: 4px;
+
+    flex-shrink: 0;
 }
 
 
-/* ========================================
+/* =========================================================
    MODEL DROPDOWN
-======================================== */
+========================================================= */
 
 .model-dropdown {
     position: relative;
 }
 
 
-/* ========================================
-   MODEL SELECTOR BUTTON
-======================================== */
+/* =========================================================
+   MODEL SELECTOR
+========================================================= */
 
 .model-selector {
-    height: 30px;
+    height: 32px;
 
     display: flex;
 
@@ -204,44 +225,45 @@
 
     gap: 5px;
 
-    padding: 0 8px;
+    padding: 0 7px;
 
-    border: 1px solid #292b37;
+    border: none;
 
     border-radius: 8px;
 
-    background: #11121a;
+    background: transparent;
 
-    color: #bfc3ce;
+    color: #aeb1bd;
 
     font-family: inherit;
 
-    font-size: 8px;
+    font-size: 10px;
+
+    font-weight: 500;
 
     cursor: pointer;
 
     transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        color 0.2s ease;
-}
-
-.model-selector:hover {
-    background: #1a1b25;
-
-    border-color: #3b2d54;
-
-    color: #e5e7eb;
+        background-color 0.18s ease,
+        color 0.18s ease;
 }
 
 
-/* ========================================
+.model-selector:hover,
+.model-selector[aria-expanded="true"] {
+    background: rgba(255, 255, 255, 0.05);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
    MODEL DOT
-======================================== */
+========================================================= */
 
 .model-dot {
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
 
     flex-shrink: 0;
 
@@ -250,32 +272,41 @@
     background: #10b981;
 
     box-shadow:
-        0 0 5px rgba(16, 185, 129, 0.4);
+        0 0 0 2px rgba(16, 185, 129, 0.08);
 }
 
 
-/* ========================================
+/* =========================================================
+   MODEL NAME
+========================================================= */
+
+.selected-model {
+    white-space: nowrap;
+}
+
+
+/* =========================================================
    CHEVRON
-======================================== */
+========================================================= */
 
 .model-chevron {
-    width: 9px;
-    height: 9px;
+    color: #707482;
 
-    color: #6f7482;
+    font-size: 11px;
 
     transition:
         transform 0.2s ease;
 }
+
 
 .model-chevron.rotate {
     transform: rotate(180deg);
 }
 
 
-/* ========================================
-   DROPDOWN MENU
-======================================== */
+/* =========================================================
+   MODEL MENU
+========================================================= */
 
 .model-menu {
     position: absolute;
@@ -284,54 +315,49 @@
 
     bottom: calc(100% + 8px);
 
-    width: 145px;
+    width: 175px;
 
     padding: 5px;
 
     box-sizing: border-box;
 
-    background: #151620;
+    border: 1px solid #2c2d39;
 
-    border: 1px solid #292b38;
+    border-radius: 11px;
 
-    border-radius: 10px;
+    background: #171821;
 
     box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.4);
+        0 15px 35px rgba(0, 0, 0, 0.45);
 
     z-index: 1000;
 
-    animation: modelMenuOpen 0.15s ease;
+    animation: modelMenuIn 0.15s ease;
 }
 
 
-/* ========================================
-   DROPDOWN ANIMATION
-======================================== */
+@keyframes modelMenuIn {
 
-@keyframes modelMenuOpen {
     from {
         opacity: 0;
-
         transform: translateY(5px);
     }
 
     to {
         opacity: 1;
-
         transform: translateY(0);
     }
+
 }
 
 
-/* ========================================
+/* =========================================================
    MODEL OPTION
-======================================== */
+========================================================= */
 
 .model-option {
     width: 100%;
-
-    height: 34px;
+    height: 36px;
 
     display: flex;
 
@@ -347,11 +373,11 @@
 
     background: transparent;
 
-    color: #9ca3af;
+    color: #bfc1ca;
 
     font-family: inherit;
 
-    font-size: 9px;
+    font-size: 11px;
 
     text-align: left;
 
@@ -362,31 +388,28 @@
         color 0.15s ease;
 }
 
+
 .model-option:hover {
-    background: rgba(139, 92, 246, 0.1);
+    background: rgba(255, 255, 255, 0.06);
 
     color: #ffffff;
 }
 
-
-/* ========================================
-   SELECTED OPTION
-======================================== */
 
 .model-option.selected {
-    background: #1c192d;
+    background: rgba(124, 58, 237, 0.12);
 
     color: #ffffff;
 }
 
 
-/* ========================================
+/* =========================================================
    OPTION DOT
-======================================== */
+========================================================= */
 
 .option-dot {
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
 
     flex-shrink: 0;
 
@@ -396,46 +419,47 @@
 }
 
 
-/* ========================================
-   CHECK ICON
-======================================== */
+/* =========================================================
+   CHECK
+========================================================= */
 
 .check-icon {
-    width: 11px;
-    height: 11px;
-
     margin-left: auto;
 
     color: #a78bfa;
+
+    font-size: 13px;
 }
 
 
-/* ========================================
+/* =========================================================
    SEND BUTTON
-======================================== */
+========================================================= */
 
 .chatbar-send {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
+    flex-shrink: 0;
+
     padding: 0;
 
     border: none;
 
-    border-radius: 16px;
+    border-radius: 50%;
 
-    background: #292b36;
+    background: #30313d;
 
-    color: #666b79;
+    color: #747887;
 
-    font-size: 14px;
+    font-size: 15px;
 
-    cursor: not-allowed;
+    cursor: default;
 
     transition:
         background-color 0.2s ease,
@@ -445,10 +469,6 @@
 }
 
 
-/* ========================================
-   ACTIVE SEND
-======================================== */
-
 .chatbar-send.active {
     background: #8b5cf6;
 
@@ -457,43 +477,128 @@
     cursor: pointer;
 
     box-shadow:
-        0 3px 10px rgba(124, 58, 237, 0.2);
+        0 3px 10px rgba(124, 58, 237, 0.25);
 }
 
+
 .chatbar-send.active:hover {
-    background: #9d6eff;
+    background: #9767fa;
 
     transform: translateY(-1px);
 
     box-shadow:
-        0 5px 14px rgba(124, 58, 237, 0.28);
+        0 5px 14px rgba(124, 58, 237, 0.32);
 }
+
 
 .chatbar-send.active:active {
-    transform: translateY(0);
+    transform: scale(0.93);
 }
 
 
-/* ========================================
+/* =========================================================
+   TOOLTIP
+========================================================= */
+
+.tooltip-text {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: calc(100% + 8px);
+
+    transform:
+        translateX(-50%)
+        translateY(4px);
+
+    padding: 6px 8px;
+
+    border: 1px solid #2c2d39;
+
+    border-radius: 6px;
+
+    background: #20212b;
+
+    color: #e5e7eb;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    z-index: 2000;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.3);
+
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease,
+        visibility 0.15s ease;
+}
+
+
+.tooltip:hover .tooltip-text,
+.tooltip:focus-visible .tooltip-text {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* =========================================================
+   TOOLTIP ARROW
+========================================================= */
+
+.tooltip-text::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 100%;
+
+    transform: translateX(-50%);
+
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #2c2d39;
+}
+
+
+/* =========================================================
    DISCLAIMER
-======================================== */
+========================================================= */
 
 .chatbar-disclaimer {
     margin: 6px 0 0;
 
     text-align: center;
 
-    color: #555a69;
+    color: #555966;
 
-    font-size: 9px;
+    font-size: 8px;
 
     line-height: 1.4;
 }
 
 
-/* ========================================
+/* =========================================================
    ACCESSIBILITY
-======================================== */
+========================================================= */
 
 .chatbar-tool:focus-visible,
 .model-selector:focus-visible,
@@ -505,45 +610,89 @@
 }
 
 
-/* ========================================
+/* =========================================================
    RESPONSIVE
-======================================== */
+========================================================= */
 
 @media (max-width: 700px) {
 
-    .chatbar-container {
-        max-width: 100%;
+    .chatbar {
+        min-height: 56px;
 
-        padding: 0 8px 8px;
+        padding: 6px 7px;
     }
 
-    .chatbar {
-        min-height: 70px;
+    .chatbar-tool {
+        width: 29px;
+        height: 29px;
 
-        border-radius: 14px;
+        font-size: 15px;
     }
 
     .chatbar-input {
         font-size: 12px;
+
+        margin-left: 2px;
     }
+
+    .model-selector {
+        padding: 0 5px;
+
+        font-size: 9px;
+    }
+
+    .chatbar-send {
+        width: 30px;
+        height: 30px;
+    }
+
 }
 
 
-@media (max-width: 450px) {
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .chatbar {
+        border-radius: 14px;
+    }
+
+    .chatbar-left {
+        gap: 0;
+    }
+
+    .chatbar-tool {
+        width: 27px;
+        height: 27px;
+
+        font-size: 14px;
+    }
 
     .selected-model {
         display: none;
     }
 
     .model-selector {
-        width: 30px;
+        width: 22px;
 
         justify-content: center;
 
         padding: 0;
     }
 
-    .chatbar-disclaimer {
-        font-size: 6px;
+    .model-chevron {
+        display: none;
     }
+
+    .chatbar-send {
+        width: 29px;
+        height: 29px;
+    }
+
+    .chatbar-disclaimer {
+        font-size: 7px;
+    }
+
 }

@@ -1,8 +1,5 @@
-
 .home-page {
     width: 100%;
-    min-height: 100%;
-
     padding: 16px;
 
     box-sizing: border-box;
@@ -11,31 +8,30 @@
     color: #ffffff;
 }
 
+
+/* =========================================================
+   WELCOME CARD
+========================================================= */
+
 .welcome-card {
     position: relative;
 
     width: 100%;
 
-    padding: 20px;
+    padding: 18px;
 
     box-sizing: border-box;
 
     border: 1px solid #20212c;
     border-radius: 12px;
 
-    background: linear-gradient(
-        135deg,
-        #151520,
-        #11111a
-    );
+    background: linear-gradient(135deg,
+            #151520,
+            #11111a);
 
     overflow: hidden;
 
-    margin-bottom: 18px;
-
-    transition:
-        border-color 0.25s ease,
-        transform 0.25s ease;
+    margin-bottom: 16px;
 }
 
 .welcome-card::after {
@@ -56,17 +52,11 @@
     pointer-events: none;
 }
 
-.welcome-card:hover {
-    border-color: #3b2d54;
-
-    transform: translateY(-1px);
-}
-
 .welcome-card h1 {
     position: relative;
     z-index: 1;
 
-    margin: 0 0 6px;
+    margin: 0 0 5px;
 
     color: #f5f5f7;
 
@@ -90,44 +80,61 @@
 }
 
 
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
 .dashboard-section {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
 .section-title,
 .panel-header {
     color: #9ca3af;
 
-    font-size: 8px;
+    font-size: 10px;
+
     font-weight: 600;
 
     letter-spacing: 0.5px;
 }
 
 
+/* =========================================================
+   QUICK START
+========================================================= */
+
 .quick-start-grid {
     display: grid;
 
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
 
-    gap: 10px;
+    gap: 9px;
 
-    margin-top: 9px;
+    margin-top: 8px;
 }
 
-.quick-card {
-    position: relative;
 
+/* =========================================================
+   QUICK CARD
+========================================================= */
+
+.quick-card {
+    width: 100%;
     min-width: 0;
-    min-height: 92px;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-start;
 
-    padding: 13px;
+    justify-content: flex-start;
 
-    text-align: left;
+    padding: 12px;
+
+    box-sizing: border-box;
 
     border: 1px solid #242532;
 
@@ -135,7 +142,11 @@
 
     background: #151620;
 
-    color: white;
+    color: #ffffff;
+
+    font-family: inherit;
+
+    text-align: left;
 
     cursor: pointer;
 
@@ -148,20 +159,6 @@
         box-shadow 0.2s ease;
 }
 
-.quick-card::before {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: 0;
-
-    width: 100%;
-    height: 1px;
-
-    background: rgba(167, 139, 250, 0.08);
-}
-
 .quick-card:hover {
     background: #1a1a27;
 
@@ -169,50 +166,57 @@
 
     transform: translateY(-2px);
 
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
 .quick-card:active {
     transform: translateY(0);
 }
+
+
+/* =========================================================
+   QUICK ICON
+========================================================= */
+
 .quick-icon {
-    width: 27px;
-    height: 27px;
+    width: 26px;
+    height: 26px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    margin-bottom: 9px;
+    margin-bottom: 7px;
 
-    border: 1px solid rgba(167, 139, 250, 0.08);
+    border: 1px solid rgba(167,
+            139,
+            250,
+            0.12);
 
     border-radius: 7px;
 
-    background: rgba(124, 58, 237, 0.12);
+    background: rgba(124,
+            58,
+            237,
+            0.12);
 
     color: #9b6cff;
 
-    font-size: 13px;
+    font-size: 12px;
 
-    transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.quick-card:hover .quick-icon {
-    background: rgba(124, 58, 237, 0.18);
-
-    transform: scale(1.05);
+    flex-shrink: 0;
 }
 
 .quick-card h3 {
-    margin: 0 0 4px;
+    margin: 0 0 3px;
 
     color: #e5e7eb;
 
-    font-size: 9px;
+    font-size: 12px;
+
     font-weight: 600;
 
     line-height: 1.2;
@@ -223,20 +227,25 @@
 
     color: #777c8c;
 
-    font-size: 7px;
+    font-size: 9.2px;
 
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
+
+/* =========================================================
+   DASHBOARD GRID
+========================================================= */
 
 .dashboard-grid {
     display: grid;
 
-    grid-template-columns: minmax(0, 1.8fr) minmax(220px, 1fr);
+    grid-template-columns:
+        minmax(0, 1.8fr) minmax(220px, 1fr);
 
-    gap: 14px;
+    gap: 12px;
 
-    margin-bottom: 18px;
+    margin-bottom: 14px;
 }
 
 .dashboard-panel,
@@ -244,24 +253,36 @@
     min-width: 0;
 }
 
+
+/* =========================================================
+   PANEL HEADER
+========================================================= */
+
 .panel-header {
-    min-height: 22px;
+    height: 20px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     padding: 0 2px;
 }
 
+
+/* =========================================================
+   MORE BUTTON
+========================================================= */
+
 .panel-more {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     padding: 0;
@@ -275,17 +296,21 @@
     color: #777c8c;
 
     cursor: pointer;
-
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease;
 }
 
 .panel-more:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255,
+            255,
+            255,
+            0.05);
 
     color: #e5e7eb;
 }
+
+
+/* =========================================================
+   CONVERSATIONS
+========================================================= */
 
 .conversation-list {
     display: flex;
@@ -301,17 +326,16 @@
     background: #151620;
 }
 
-
 .conversation-item {
-    min-height: 49px;
+    height: 45px;
 
     display: flex;
 
     align-items: center;
 
-    gap: 9px;
+    gap: 8px;
 
-    padding: 7px 10px;
+    padding: 6px 9px;
 
     box-sizing: border-box;
 
@@ -329,28 +353,44 @@
     background: #1a1a27;
 }
 
+
+/* =========================================================
+   CONVERSATION ICON
+========================================================= */
+
 .conversation-icon {
-    width: 22px;
-    height: 22px;
+    width: 21px;
+    height: 21px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     flex-shrink: 0;
 
-    border: 1px solid rgba(167, 139, 250, 0.12);
+    border: 1px solid rgba(167,
+            139,
+            250,
+            0.12);
 
     border-radius: 6px;
 
-    background: rgba(124, 58, 237, 0.07);
+    background: rgba(124,
+            58,
+            237,
+            0.07);
 
     color: #9b6cff;
 
-    font-size: 10px;
+    font-size: 9px;
 }
 
+
+/* =========================================================
+   CONVERSATION INFO
+========================================================= */
 
 .conversation-info {
     min-width: 0;
@@ -366,7 +406,10 @@
     color: #e5e7eb;
 
     font-size: 8px;
+
     font-weight: 500;
+
+    line-height: 1.2;
 
     white-space: nowrap;
 
@@ -376,12 +419,17 @@
 .conversation-info span {
     display: block;
 
-    margin-top: 3px;
+    margin-top: 2px;
 
     color: #666b7a;
 
-    font-size: 6px;
+    font-size: 5.5px;
 }
+
+
+/* =========================================================
+   MODEL BADGE
+========================================================= */
 
 .model-badge {
     padding: 3px 6px;
@@ -398,20 +446,38 @@
 .model-badge.green {
     color: #10b981;
 
-    background: rgba(16, 185, 129, 0.1);
+    background: rgba(16,
+            185,
+            129,
+            0.1);
 
-    border: 1px solid rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16,
+            185,
+            129,
+            0.08);
 }
 
 .model-badge.orange {
     color: #f59e0b;
 
-    background: rgba(245, 158, 11, 0.1);
+    background: rgba(245,
+            158,
+            11,
+            0.1);
 
-    border: 1px solid rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245,
+            158,
+            11,
+            0.08);
 }
+
+
+/* =========================================================
+   RESUME BUTTON
+========================================================= */
+
 .resume-btn {
-    padding: 5px 8px;
+    padding: 4px 7px;
 
     border: 1px solid #2c2e3a;
 
@@ -423,16 +489,11 @@
 
     font-family: inherit;
 
-    font-size: 6px;
+    font-size: 5px;
 
     cursor: pointer;
 
     white-space: nowrap;
-
-    transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        color 0.2s ease;
 }
 
 .resume-btn:hover {
@@ -443,25 +504,31 @@
     color: #ffffff;
 }
 
+
+/* =========================================================
+   LIBRARY
+========================================================= */
+
 .library-list {
     display: flex;
 
     flex-direction: column;
 
-    gap: 7px;
+    gap: 6px;
 }
 
 .library-card {
     width: 100%;
-    height: 49px;
+
+    height: 45px;
 
     display: flex;
 
     align-items: center;
 
-    gap: 9px;
+    gap: 8px;
 
-    padding: 7px 10px;
+    padding: 6px 9px;
 
     box-sizing: border-box;
 
@@ -474,6 +541,8 @@
     color: #d1d5db;
 
     cursor: pointer;
+
+    font-family: inherit;
 
     transition:
         background-color 0.2s ease,
@@ -489,30 +558,49 @@
     transform: translateX(2px);
 }
 
+
+/* =========================================================
+   LIBRARY ICON
+========================================================= */
+
 .library-icon {
-    width: 23px;
-    height: 23px;
+    width: 21px;
+    height: 21px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     flex-shrink: 0;
 
-    border: 1px solid rgba(167, 139, 250, 0.08);
+    border: 1px solid rgba(167,
+            139,
+            250,
+            0.08);
 
     border-radius: 6px;
 
-    background: rgba(124, 58, 237, 0.12);
+    background: rgba(124,
+            58,
+            237,
+            0.12);
 
     color: #9b6cff;
 
-    font-size: 10px;
+    font-size: 9px;
 }
+
+
+/* =========================================================
+   LIBRARY TEXT
+========================================================= */
 
 .library-card span {
     flex: 1;
+
+    min-width: 0;
 
     overflow: hidden;
 
@@ -520,7 +608,7 @@
 
     color: #d1d5db;
 
-    font-size: 7px;
+    font-size: 6.5px;
 
     white-space: nowrap;
 
@@ -530,7 +618,7 @@
 .library-card strong {
     color: #a78bfa;
 
-    font-size: 6px;
+    font-size: 5.5px;
 
     font-weight: 500;
 
@@ -538,135 +626,35 @@
 }
 
 
-.dashboard-chat {
+/* =========================================================
+   CHAT BAR WRAPPER
+========================================================= */
+
+.chat-bar {
     width: 100%;
-    height: 38px;
 
-    display: flex;
-
-    align-items: center;
-
-    gap: 9px;
-
-    padding: 0 9px;
+    margin-top: 14px;
 
     box-sizing: border-box;
-
-    border: 1px solid #242532;
-
-    border-radius: 9px;
-
-    background: #151620;
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.dashboard-chat:focus-within {
-    border-color: #3b2d54;
-
-    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.06);
 }
 
 
-.chat-attachment {
-    flex-shrink: 0;
-
-    color: #9ca3af;
-
-    font-size: 11px;
-
-    cursor: pointer;
-
-    transition: color 0.2s ease;
-}
-
-.chat-attachment:hover {
-    color: #a78bfa;
-}
-
-
-.dashboard-chat input {
-    flex: 1;
-    min-width: 50px;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: #ffffff;
-    font-family: inherit;
-    font-size: 16px;
-}
-
-.dashboard-chat input::placeholder {
-    color: #737887;
-}
-
-
-.send-btn {
-    width: 23px;
-    height: 23px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    padding: 0;
-
-    border: none;
-
-    border-radius: 16px;
-
-    background: #8b5cf6;
-
-    color: #ffffff;
-
-    cursor: pointer;
-
-    font-size: 11px;
-
-    transition:
-        background-color 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.send-btn:hover {
-    background: #9d6eff;
-
-    transform: translateY(-1px);
-
-    box-shadow: 0 4px 10px rgba(124, 58, 237, 0.25);
-}
-
-.send-btn:active {
-    transform: translateY(0);
-}
-
-
-.quick-card:focus-visible,
-.resume-btn:focus-visible,
-.library-card:focus-visible,
-.panel-more:focus-visible,
-.send-btn:focus-visible {
-    outline: 2px solid #a78bfa;
-
-    outline-offset: 2px;
-}
-
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media (max-width: 900px) {
 
     .quick-start-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(2,
+                minmax(0, 1fr));
     }
 
     .dashboard-grid {
         grid-template-columns: 1fr;
     }
+
 }
 
 
@@ -676,23 +664,13 @@
         padding: 12px;
     }
 
-    .welcome-card {
-        padding: 16px;
-    }
-
-    .welcome-card h1 {
-        font-size: 15px;
-    }
-
     .quick-start-grid {
         grid-template-columns: 1fr;
     }
 
-    .model-badge {
-        display: none;
-    }
-
+    .model-badge,
     .resume-btn {
         display: none;
     }
+
 }
