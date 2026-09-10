@@ -207,7 +207,7 @@ The root route automatically redirects to the home page:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/synapse-ai.git
+git clone https://github.com/CodeWithPurnendra/Synapse.git
 ```
 
 ### 2. Navigate to the Project
