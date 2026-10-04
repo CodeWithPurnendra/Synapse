@@ -213,7 +213,7 @@ git clone https://github.com/CodeWithPurnendra/Synapse.git
 ### 2. Navigate to the Project
 
 ```bash
-cd synapse-ai
+cd synapse-ai 
 ```
 
 ### 3. Install Dependencies
